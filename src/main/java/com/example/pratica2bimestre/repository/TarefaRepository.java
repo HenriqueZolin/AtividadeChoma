@@ -18,5 +18,5 @@ public interface TarefaRepository extends JpaRepository<Tarefa, Integer> {
     @Query("SELECT t FROM Tarefa t WHERE t.status IN ('A fazer', 'Em progresso') AND t.dataFinal < CURRENT_DATE")
     List<Tarefa> findTarefasAtrasadas();
 
-    List<Tarefa> findByStatus(int status);
+    List<Tarefa> findByStatus(String status);
 }
